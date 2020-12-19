@@ -7,7 +7,11 @@ const Tasks = () => {
     const taskContext = useContext(TaskContext);
     const tasks = taskContext.todoList;
     if(tasks.length === 0){
-        return <h3>No Task Found.</h3>
+        return <div className="card">
+                <div className="card-body">
+                    <h5>No Task Found.</h5>
+                </div>
+            </div>
     }
     return (
         /**

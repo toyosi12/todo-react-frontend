@@ -22,6 +22,7 @@ import './App.css';
 
 
 function App() {
+  const baseUrl = 'https://todo-laravel-backend.herokuapp.com';
   const [modalVisible, setModal] = useState(false);
   const [modalAction, setModalAction] = useState('');
   let [todoList, setTodoList] = useState([]);
@@ -36,16 +37,16 @@ function App() {
   }
 
   useEffect(()=>{
-    axios.get('/api/todos')
+    axios.get(`${baseUrl}/api/todos`)
     .then(res => {
       setTodoList(res.data);
     })
   }, []);
 
   const addTask = (task, action) => {
-    axios.post('/api/create', { task: task, completed: 0})
+    axios.post(`${baseUrl}/api/create`, { task: task, completed: 0})
     .then(res => {
-      setTodoList([...todoList, res.data]);
+      setTodoList([ res.data, ...todoList ]);
       notification['success']({
         'message': "Successful"
       })
@@ -53,7 +54,7 @@ function App() {
   }
 
   const editTask = (task) => {
-    axios.put(`/api/todos/${taskId}`, {task: task})
+    axios.put(`${baseUrl}/api/todos/${taskId}`, {task: task})
     .then(res => {
       todoList.forEach((todo, index) => {
         if(todo.id === taskId){
@@ -68,7 +69,7 @@ function App() {
   }
 
   const checkTask = (id, checked) => {
-    axios.put(`/api/todos/${id}`, {completed: checked})
+    axios.put(`${baseUrl}/api/todos/${id}`, {completed: checked})
     .then(res => {
       todoList.forEach((todo, index) => {
         if(todo.id === id){
@@ -80,7 +81,7 @@ function App() {
   }
 
   const deleteTask = (id) => {
-    axios.delete(`/api/delete/${id}`)
+    axios.delete(`${baseUrl}/api/delete/${id}`)
     .then(res => {
       todoList.forEach((todo, index) => {
         if(todo.id === id){
