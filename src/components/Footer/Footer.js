@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 
 import { ModalContext } from '../../contexts/ModalContext';
-import { TaskContext } from '../../contexts/TaskContext';
 
 import './Footer.css';
 const Footer = () => {
