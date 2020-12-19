@@ -1,5 +1,5 @@
 import Checkbox from 'antd/lib/checkbox/Checkbox';
-import { notification, Popconfirm } from 'antd';
+import { Popconfirm } from 'antd';
 
 import React, { useContext } from 'react';
 

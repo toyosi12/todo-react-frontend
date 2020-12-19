@@ -6,7 +6,6 @@ import { TaskContext } from '../../contexts/TaskContext';
 import './Footer.css';
 const Footer = () => {
     const modalContext = useContext(ModalContext);
-    const taskContext = useContext(TaskContext);
     return (
         <footer className="row">
             <div className="col-md-12">
