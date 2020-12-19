@@ -1,0 +1,19 @@
+@media only screen and (min-width: 768px){
+    .task-board{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .task-title{
+        color: #000;
+    }
+
+    .task-time, .task-location{
+        font-size: 0.8em;
+    }
+
+    .task-time{
+        margin-right: 20px;
+    }
+
+}
