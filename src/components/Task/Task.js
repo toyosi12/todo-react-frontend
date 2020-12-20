@@ -28,11 +28,11 @@ const Task = (props) => {
                 <div className="row">
                     <div className="col-1"><Checkbox checked={props.task.completed ? true : false} onChange={ (e) => handleCheckBox(props.task.id, e.target.checked) } /></div>
                     <div className="col-9">
-                        <h5 className="task-title">{ props.task.task }</h5>
+                        <h5 className={ props.task.completed ? 'task-title completed-text' : 'task-title'}>{ props.task.task }</h5>
                         <span className="task-time"></span>
                         <span className="task-location"></span>
                     </div>
-                    <div className="col-2">
+                    <div className="col-md-2">
                         <button 
                             className={ !props.task.completed ? 'btn btn-secondary mr-2' : 'btn mr-2 completed'} 
                             type="Edit" onClick={ () => modalContext.setModalVisibility(true, 'edit-task', props.task.task, props.task.id) }><FontAwesomeIcon icon={faEdit} /></button>

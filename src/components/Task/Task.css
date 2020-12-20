@@ -11,5 +11,9 @@
 
 .completed{
     background-color: #f3f3f3 !important;
-    color: rgb(240, 240, 240);
+    color: #ccc !important;
+}
+
+.completed-text{
+    color: #ccc !important;
 }
